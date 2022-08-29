@@ -1,0 +1,27 @@
+/hotel/search
+headers: {
+    Search-Currency: USD
+}
+{
+    "check_in": "2022/09/24",
+    "check_out": "2022/09/29",
+    "suppliers": [
+        {
+            "id": 2,
+            "name": "Hotelbeds"
+        }
+    ],
+    "rooms": [
+        {
+            "adult_no": 1,
+            "child_age": [
+                6,8
+            ]
+        }
+    ],
+    "location": {
+        "code": 177,
+        "name": "Ohtels Villa Dorada",
+        "type": "city"
+    }
+}
