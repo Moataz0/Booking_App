@@ -4,7 +4,6 @@ import {
   faCalendarDays,
   faCar,
   faHotel,
-  faLocation,
   faLocationDot,
   faPerson,
   faPlane,
@@ -17,7 +16,6 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useNavigate } from "react-router-dom";
-import reFetch from "../../hooks/useFetch";
 import axios from "../../hooks/endPoint";
 
 const Header = ({ type }) => {
@@ -128,6 +126,9 @@ const Header = ({ type }) => {
                 {loadingResult && <span className="loader"></span>}
                 {showSearchResult && (
                   <div className="searchResult">
+                    {searchResult.data.length === 0 && (
+                      <h5 className="notFound">Not found..</h5>
+                    )}
                     <ul>
                       {searchResult.data.map((res, index) => (
                         <li
@@ -138,9 +139,9 @@ const Header = ({ type }) => {
                           }}
                         >
                           <FontAwesomeIcon
-                            icon={res.type == "city" ? faLocationDot : faHotel}
+                            icon={res.type === "city" ? faLocationDot : faHotel}
                             style={
-                              res.type == "city"
+                              res.type === "city"
                                 ? { marginRight: "13px" }
                                 : { marginRight: "10px" }
                             }

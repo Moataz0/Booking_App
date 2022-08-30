@@ -158,6 +158,10 @@
   border-radius: 4px;
   box-shadow: 0 2px 16px rgb(66 64 64 / 15%);
 }
+.notFound {
+  font-weight: 300;
+  text-align: center;
+}
 .searchResult ul {
   padding-left: 5px;
 }
