@@ -1,5 +1,5 @@
 .header {
-  background-color:#474787;
+  background-color: #474787;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -33,7 +33,7 @@
   margin: 20px 0px;
 }
 .headerBtn {
-  background-color: #FFF;
+  background-color: #fff;
   color: #706fd3;
   border: none;
   padding: 10px;
@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 .headerBtnSearch {
-  background-color:#474787;
+  background-color: #474787;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -65,7 +65,7 @@
 }
 
 .headerIcon {
-  color: #a5a5a5
+  color: #a5a5a5;
 }
 
 .headerSearchItem {
@@ -77,7 +77,7 @@
   border: none;
   outline: none;
   color: #a5a5a5;
-    font-size: 15px;
+  font-size: 15px;
 }
 .headerSearchText {
   color: #a5a5a5;
@@ -123,4 +123,45 @@
   cursor: not-allowed;
   background-color: #b3b3b3;
   border-color: #b3b3b3;
+}
+.loader {
+  position: absolute;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #474787;
+  border-bottom-color: #d3cece;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+.searchResult {
+  position: absolute;
+  color: red;
+  top: 60px;
+  z-index: 999;
+  background-color: #fff;
+  width: 70vh;
+  height: auto;
+  left: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 16px rgb(0 0 0 / 15%);
+}
+.searchResult ul {
+  padding-left: 5px;
+}
+.searchResult ul li {
+  list-style: none;
+  padding: 5px;
+  color: #525252;
 }

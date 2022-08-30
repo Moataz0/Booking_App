@@ -14,7 +14,6 @@ import "./home.css";
 function Home() {
   const { data, loading, error } = useFetch("ping", {
     headers: {
-      Origin: "b2c.darts",
       "Access-Control-Allow-Origin": "*",
       "Accept-Language": "ar",
     },

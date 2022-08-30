@@ -3,11 +3,14 @@ import {
   faBed,
   faCalendarDays,
   faCar,
+  faHotel,
+  faLocation,
+  faLocationDot,
   faPerson,
   faPlane,
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
@@ -15,10 +18,15 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useNavigate } from "react-router-dom";
 import reFetch from "../../hooks/useFetch";
+import axios from "../../hooks/endPoint";
 
 const Header = ({ type }) => {
   const [destination, setDistination] = useState("");
   const [openDate, setOpenDate] = useState(false);
+  const [showSearchResult, setShowSearchResult] = useState(false);
+  const [loadingResult, setloadingResult] = useState(false);
+  const [searchResult, setSearchResult] = useState([]);
+
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -35,14 +43,30 @@ const Header = ({ type }) => {
   });
   const [openOptions, setOpenOptions] = useState(false);
 
-  const { data } = reFetch(`hotel/matching?key=${destination}`, {
-    headers: {
-      Origin: "b2c.darts",
-      "Accept-Language": "ar",
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  });
-  console.log("first", data);
+  const handleGetPlaces = (e) => {
+    let typing = e.target.value;
+    setDistination(typing);
+  };
+  useEffect(() => {
+    const getData = async () => {
+      if (destination.length >= 3) {
+        setloadingResult(true);
+        const { data } = await axios.get(`hotel/matching?key=${destination}`, {
+          headers: {
+            "Accept-Language": "ar",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        console.log("search...", data.data);
+        setSearchResult(data);
+        setloadingResult(false);
+        setShowSearchResult(true);
+      } else {
+        setShowSearchResult(false);
+      }
+    };
+    getData();
+  }, [destination]);
 
   const handleOption = (name, op) => {
     setOptions((prev) => {
@@ -95,11 +119,35 @@ const Header = ({ type }) => {
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <input
+                  value={destination}
                   type="text"
                   placeholder="Where are you going"
                   className="headerSearchInput"
-                  onChange={(e) => setDistination(e.target.value)}
+                  onChange={handleGetPlaces}
                 />
+                {loadingResult && <span className="loader"></span>}
+                {showSearchResult && (
+                  <div className="searchResult">
+                    <ul>
+                      {searchResult.data.map((res, index) => (
+                        <li
+                          key={res.code}
+                          onClick={(e) => setDistination(e.target.innerText)}
+                        >
+                          <FontAwesomeIcon
+                            icon={res.type == "city" ? faLocationDot : faHotel}
+                            style={
+                              res.type == "city"
+                                ? { marginRight: "13px" }
+                                : { marginRight: "10px" }
+                            }
+                          />
+                          {res.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
