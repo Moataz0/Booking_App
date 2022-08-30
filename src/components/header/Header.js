@@ -114,12 +114,12 @@ const Header = ({ type }) => {
             <p className="headerDesc">
               Search deals on hotels, homes, and much more...
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <input
-                  value={destination}
+                  value={destination.trimStart()}
                   type="text"
                   placeholder="Where are you going"
                   className="headerSearchInput"
@@ -132,7 +132,10 @@ const Header = ({ type }) => {
                       {searchResult.data.map((res, index) => (
                         <li
                           key={res.code}
-                          onClick={(e) => setDistination(e.target.innerText)}
+                          onClick={(e) => {
+                            setDistination(e.target.innerText);
+                            // setShowSearchResult(false);
+                          }}
                         >
                           <FontAwesomeIcon
                             icon={res.type == "city" ? faLocationDot : faHotel}

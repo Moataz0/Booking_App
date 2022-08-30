@@ -1,6 +1,6 @@
 import "./footer.css";
 
-const Footer = ({ email }) => {
+const Footer = ({ email, phone }) => {
   return (
     <div className="footer">
       <div className="fLists">
@@ -44,7 +44,10 @@ const Footer = ({ email }) => {
           <li className="fListItem">Terms & conditions</li>
         </ul>
       </div>
-      <div className="fText">Copyright © 2022 {email}.</div>
+      <div className="footerChildren">
+        <div className="fText">Copyright © 2022 {email}.</div>
+        <div className="fText">Phone {phone}.</div>
+      </div>
     </div>
   );
 };

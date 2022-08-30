@@ -20,24 +20,30 @@ function Home() {
   });
   // Check if no response
   if (!data.data?.access_token) return;
-  const { email } = data.data.settings.tenant;
+  const { email, phone } = data.data.settings.tenant;
   const { access_token } = data.data;
   localStorage.setItem("token", access_token);
 
   return (
     <div>
-      <Navbar />
-      <Header />
-      <div className="homeContainer">
-        <Featured />
-        <h1 className="homeTitle">Browse by property type</h1>
-        <PropertyList />
-        <h1 className="homeTitle">Homes guests love</h1>
-        <FeaturedProperties />
-        <h1 className="homeTitle">Connect with other travelers</h1>
-        <MailList />
-        <Footer email={email} />
-      </div>
+      {loading ? (
+        <h2>Please wait...</h2>
+      ) : (
+        <>
+          <Navbar />
+          <Header />
+          <div className="homeContainer">
+            <Featured />
+            <h1 className="homeTitle">Browse by property type</h1>
+            <PropertyList />
+            <h1 className="homeTitle">Homes guests love</h1>
+            <FeaturedProperties />
+            <h1 className="homeTitle">Connect with other travelers</h1>
+            <MailList />
+            <Footer email={email} phone={phone} />
+          </div>
+        </>
+      )}
     </div>
   );
 }
