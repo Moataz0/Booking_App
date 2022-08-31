@@ -2,9 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
+
 function Navbar() {
   return (
-    <div className="navbar">
+    <div className="container">
+
+   
+    <div className="row navbar">
       <div className="navContainer">
         <Link to="/" style={{textDecoration:"none"}}>
           <span className="logo">travware</span>
@@ -15,6 +19,7 @@ function Navbar() {
           <button className="navButton">Login</button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

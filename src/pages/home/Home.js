@@ -25,11 +25,13 @@ function Home() {
   localStorage.setItem("token", access_token);
 
   return (
-    <div>
+    < >
       {loading ? (
-        <h2>Please wait...</h2>
+        <div className="centerLoader">
+          <span className="loader"></span>
+        </div>
       ) : (
-        <>
+        <div div className="container">
           <Navbar />
           <Header />
           <div className="homeContainer">
@@ -42,9 +44,9 @@ function Home() {
             <MailList />
             <Footer email={email} phone={phone} />
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
