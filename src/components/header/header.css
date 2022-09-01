@@ -89,19 +89,20 @@
   z-index: 2;
 }
 .options {
+  width: 250px;
   z-index: 2;
   position: absolute;
   top: 60px;
   background-color: #fff;
   color: gray;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0.5rem 1rem 0px rgb(0 11 38 / 24%);
 }
 .optionItem {
-  width: 200px;
+  gap: 40px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   margin: 10px;
 }
 .optionCounter {
@@ -173,4 +174,37 @@
 
 .searchResult ul li:hover {
   cursor: pointer;
+}
+.roomTitle {
+  text-align: center;
+}
+.btnAddRoom {
+  border: none;
+  color: #474787;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px 5px;
+}
+.btnAddRoom:hover {
+  cursor: pointer;
+}
+.optionItemAge > * {
+  flex: 1;
+}
+.selectAge {
+  padding: 3px;
+  border: 1px solid #c7c7c7;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.optionAge {
+  flex-direction: column;
+  flex: 1;
+}
+
+.optionItemAge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-left: 12px;
 }
