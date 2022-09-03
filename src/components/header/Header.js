@@ -46,8 +46,15 @@ const Header = ({ type }) => {
   };
 
   const addNewRoom = () => {
-    setOptions([...options])
-  }
+    let newRoom = { adult: 1, children: 0 };
+    setOptions([...options, newRoom]);
+  };
+
+  const removeRoom = (index) => {
+    let data = [...options];
+    data.splice(index, 1);
+    setOptions(data);
+  };
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -57,11 +64,13 @@ const Header = ({ type }) => {
   ]);
 
   const navigate = useNavigate();
-  const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
-  });
+  const [options, setOptions] = useState([
+    {
+      adult: 1,
+      children: 0,
+      room: 1,
+    },
+  ]);
   const [openOptions, setOpenOptions] = useState(false);
   let agesArr = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const handleGetPlaces = (e) => {
@@ -89,18 +98,19 @@ const Header = ({ type }) => {
     getData();
   }, [destination]);
 
-
   const handleOption = (name, op) => {
+    let data = [...options];
     setOptions((prev) => {
       return {
         ...prev,
-        [name]: op === "i" ? options[name] + 1 : options[name] - 1,
+        [name]: op === "i" ? data[name] + 1 : data[name] - 1,
       };
     });
     (name === "children") & (op === "i")
       ? handleChildrenAgeAdd()
       : handleRemoveChildrenAge(name);
   };
+
   const handleSearch = () => {
     navigate("/hotels", { state: { destination, date, options } });
   };
@@ -213,77 +223,93 @@ const Header = ({ type }) => {
                     setOpenDate(false);
                   }}
                 >
-                  {`${options.adult} adult · ${options.children} children · ${options.room} room`}
+                  {`${options[0].adult} adult · ${options[0].children} children · ${options[0].room} room`}
                 </span>
                 {openOptions && (
                   <div className="options">
-                    <h4 className="roomTitle">Room 1</h4>
-                    <div className="optionItem">
-                      <span className="optionText">Adult</span>
-                      <div className="optionCounter">
-                        <button
-                          disabled={options.adult <= 1}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("adult", "d")}
-                        >
-                          -
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.adult}
-                        </span>
-                        <button
-                          disabled={options.adult > 8}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("adult", "i")}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-
-                    <div className="optionItem">
-                      <span className="optionText">children</span>
-                      <div className="optionCounter">
-                        <button
-                          disabled={options.children <= 0}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("children", "d")}
-                        >
-                          -
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.children}
-                        </span>
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("children", "i")}
-                          disabled={options.children > 8}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-
-                    <div className="optionItemAge">
-                      {options.children >= 1 &&
-                        childrenAge.map((singleChild, index) => (
-                          <div className="optionAge">
-                            <select
-                              key={index}
-                              className="selectAge"
-                              name="age"
-                              id="age"
-                              onChange={(e) => handleChildrenAge(e, index)}
-                            >
-                              {agesArr.map((age, index) => (
-                                <option value={age} key={index}>
-                                  {age} years old
-                                </option>
-                              ))}
-                            </select>
+                    {options.map((room, i) => {
+                      return (
+                        <>
+                          <h4 className="roomTitle">Room {i}</h4>
+                          <div className="optionItem">
+                            <span className="optionText">Adult</span>
+                            <div className="optionCounter">
+                              <button
+                                disabled={options[0].adult <= 1}
+                                className="optionCounterButton"
+                                onClick={() => handleOption("adult", "d")}
+                              >
+                                -
+                              </button>
+                              <span className="optionCounterNumber">
+                                {options.adult}
+                              </span>
+                              <button
+                                disabled={options[0].adult > 8}
+                                className="optionCounterButton"
+                                onClick={() => handleOption("adult", "i")}
+                              >
+                                +
+                              </button>
+                            </div>
                           </div>
-                        ))}
-                    </div>
+
+                          <div className="optionItem">
+                            <span className="optionText">children</span>
+                            <div className="optionCounter">
+                              <button
+                                disabled={options[0].children <= 0}
+                                className="optionCounterButton"
+                                onClick={() => handleOption("children", "d")}
+                              >
+                                -
+                              </button>
+                              <span className="optionCounterNumber">
+                                {options.children}
+                              </span>
+                              <button
+                                className="optionCounterButton"
+                                onClick={() => handleOption("children", "i")}
+                                disabled={options[0].children > 8}
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="optionItemAge">
+                            {options[0].children >= 1 &&
+                              childrenAge.map((singleChild, index) => (
+                                <div className="optionAge">
+                                  <select
+                                    key={index}
+                                    className="selectAge"
+                                    name="age"
+                                    id="age"
+                                    onChange={(e) =>
+                                      handleChildrenAge(e, index)
+                                    }
+                                  >
+                                    {agesArr.map((age, index) => (
+                                      <option value={age} key={index}>
+                                        {age} years old
+                                      </option>
+                                    ))}
+                                  </select>
+                                </div>
+                              ))}
+                          </div>
+                          {i > 0 && (
+                            <button
+                              className="btnAddRoom"
+                              onClick={() => removeRoom(i)}
+                            >
+                              Remove room
+                            </button>
+                          )}
+                        </>
+                      );
+                    })}
 
                     <button className="btnAddRoom" onClick={addNewRoom}>
                       Add another room
