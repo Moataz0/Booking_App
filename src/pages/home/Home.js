@@ -20,19 +20,24 @@ function Home() {
   });
   // Check if no response
   if (!data.data?.access_token) return;
-  const { email, phone } = data.data.settings.tenant;
+  const { tenant, currencies, default_language ,languages} = data.data.settings;
   const { access_token } = data.data;
   localStorage.setItem("token", access_token);
 
   return (
-    < >
+    <>
       {loading ? (
         <div className="centerLoader">
           <span className="loader"></span>
         </div>
       ) : (
         <div div className="container">
-          <Navbar />
+          <Navbar
+            nameCompany={tenant.name}
+            currencies={currencies}
+            lang={default_language}
+            languages={languages}
+          />
           <Header />
           <div className="homeContainer">
             <Featured />
@@ -42,7 +47,7 @@ function Home() {
             <FeaturedProperties />
             <h1 className="homeTitle">Connect with other travelers</h1>
             <MailList />
-            <Footer email={email} phone={phone} />
+            <Footer tenant={tenant} />
           </div>
         </div>
       )}

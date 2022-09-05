@@ -1,10 +1,10 @@
 import "./footer.css";
 
-const Footer = ({ email, phone }) => {
+const Footer = ({tenant}) => {
   return (
     <div className="footer">
       <div className="fLists">
-        <ul className="fList">
+        {/* <ul className="fList">
           <li className="fListItem">Countries</li>
           <li className="fListItem">Regions</li>
           <li className="fListItem">Cities</li>
@@ -42,11 +42,12 @@ const Footer = ({ email, phone }) => {
           <li className="fListItem">Safety Resource Center</li>
           <li className="fListItem">Investor relations</li>
           <li className="fListItem">Terms & conditions</li>
-        </ul>
+        </ul> */}
       </div>
       <div className="footerChildren">
-        <div className="fText">Copyright © 2022 {email}.</div>
-        <div className="fText">Phone {phone}.</div>
+        <div className="fText">Copyright © 2022 {tenant.email}.</div>
+        <div className="fText">Phone {tenant.phone}.</div>
+        <div className="fText">Address {tenant.address}.</div>
       </div>
     </div>
   );
