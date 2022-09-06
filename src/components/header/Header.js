@@ -54,7 +54,6 @@ const Header = ({ type }) => {
   const handleChildrenAgeAdd = (index) => {
     setChildrenAge([...childrenAge, { age: "" }]);
     let concat = [...childrenAge.concat(options)];
-    console.log("Options", concat);
   };
 
   const addNewRoom = () => {
@@ -241,7 +240,7 @@ const Header = ({ type }) => {
                     setOpenDate(false);
                   }}
                 >
-                  {`${options[0].adult} adult · ${childrenAge[0].age} children · ${options[0].room} room`}
+                  {`${options[0].adult} adult · ${options[0].children} children · ${options[0].room} room`}
                 </span>
                 {openOptions && (
                   <div className="options">
@@ -285,7 +284,7 @@ const Header = ({ type }) => {
                                 -
                               </button>
                               <span className="optionCounterNumber">
-                                {options[i].children}
+                                {options[0].children}
                               </span>
                               <button
                                 className="optionCounterButton"
