@@ -19,19 +19,19 @@ import { useNavigate } from "react-router-dom";
 import axios from "../../hooks/endPoint";
 
 const Header = ({ type }) => {
+  const initialOption = {
+    adult: 1,
+    children: 0,
+    room: 1,
+    ages: [],
+  };
   const [destination, setDistination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [showSearchResult, setShowSearchResult] = useState(false);
   const [loadingResult, setloadingResult] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
   const [childrenAge, setChildrenAge] = useState([]);
-  const [options, setOptions] = useState([
-    {
-      adult: 1,
-      children: 0,
-      room: 1,
-    },
-  ]);
+  const [options, setOptions] = useState([initialOption]);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -45,49 +45,30 @@ const Header = ({ type }) => {
   const [openOptions, setOpenOptions] = useState(false);
 
   const handleRemoveChildrenAge = (index) => {
-    const list = [...childrenAge];
-    list.splice(index, 1);
-    setChildrenAge(list);
-    setOptions(
-      options.map((x, i) => {
-        return {
-          ...x,
-          children: x.children - 1,
-        };
-      })
-    );
+    const newOptions = options.slice();
+    const room = newOptions[index];
+    newOptions[index] = {
+      ...room,
+      children: room.children - 1,
+      ages: room.ages.slice(0, room.ages.length - 1),
+    };
+    setOptions(newOptions);
   };
 
   const handleChildrenAgeAdd = (index) => {
-    setChildrenAge([...childrenAge, { age: "" }]);
-    setOptions(
-      options.map((x, i) => {
-        return {
-          ...x,
-          children: x.children + 1,
-        };
-      })
-    );
-
-    console.log(childrenAge);
+    const newOptions = options?.slice();
+    const room = newOptions[index];
+    newOptions[index] = {
+      ...room,
+      children: room.children + 1,
+      ages: [...room.ages, { age: "" }],
+    };
+    setOptions(newOptions);
   };
 
   // Add new room
   const addNewRoom = (i) => {
-    let newRoom = { adult: 1, children: 0 };
-    setOptions([...options, newRoom]);
-
-    let data = [...childrenAge];
-    data.splice(data[i], data.length -i);
-    console.log(i);
-    setChildrenAge(data);
-
-    // let empt = [...childrenAge.splice(i, i)];
-    // setChildrenAge([...childrenAge[i],[newAge[i]]]);
-
-    // let fin = childrenAge.filter((x) => x[i] === newAge[i]);
-    // setChildrenAge(fin);
-    console.log("IIII", options, "ages", childrenAge, "data", data);
+    setOptions([...options, initialOption]);
   };
 
   // Remove the current room
@@ -148,7 +129,7 @@ const Header = ({ type }) => {
       })
     );
     // console.log("Options...", options[0]);
-    console.log("data index is==> ", options, index);
+    // console.log("data index is==> ", options, index);
   };
 
   const handleOption = (name, op) => {
@@ -170,6 +151,7 @@ const Header = ({ type }) => {
     return total;
   };
 
+  // console.log("options.length", options.length);
   return (
     <div className=" header">
       <div
@@ -281,7 +263,7 @@ const Header = ({ type }) => {
                 >
                   {`${
                     options.sum("adult") + options.sum("children")
-                  } Travelers · ${options[0].room} room`}
+                  } travelers - ${options[0].room} room`}
                 </span>
                 {openOptions && (
                   <div className="options">
@@ -336,9 +318,9 @@ const Header = ({ type }) => {
                               </button>
                             </div>
                           </div>
-                          <div className="optionItemAge">
-                            {childrenAge.length >= 1 &&
-                              childrenAge.map((singleChild, index) => (
+                          {room.children > 0 && (
+                            <div className="optionItemAge">
+                              {room.ages.map((singleChild, index) => (
                                 <div className="optionAge" key={index}>
                                   <select
                                     className="selectAge"
@@ -356,22 +338,24 @@ const Header = ({ type }) => {
                                   </select>
                                 </div>
                               ))}
-                          </div>
-                          {i > 0 && (
+                            </div>
+                          )}
+                          {i > 0 ? (
                             <button
                               className="btnAddRoom"
                               onClick={() => removeRoom(i)}
                             >
                               Remove room
                             </button>
+                          ) : (
+                            <button
+                              className="btnAddRoom"
+                              onClick={() => addNewRoom(i)}
+                              disabled={options.length >= 4}
+                            >
+                              Add another room
+                            </button>
                           )}
-                          <button
-                            className="btnAddRoom"
-                            onClick={() => addNewRoom(i)}
-                            // disabled={options[0].room.length  > 3}
-                          >
-                            Add another room
-                          </button>
                         </div>
                       );
                     })}
