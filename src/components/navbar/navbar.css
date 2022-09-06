@@ -3,6 +3,7 @@
   background-color: #fff;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #cbcbd3;
 }
 .navContainer {
   width: 100%;

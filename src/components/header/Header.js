@@ -17,7 +17,6 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useNavigate } from "react-router-dom";
 import axios from "../../hooks/endPoint";
-import NewRoom from "../newRoom/NewRoom";
 
 const Header = ({ type }) => {
   const [destination, setDistination] = useState("");
@@ -25,7 +24,7 @@ const Header = ({ type }) => {
   const [showSearchResult, setShowSearchResult] = useState(false);
   const [loadingResult, setloadingResult] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
-  const [childrenAge, setChildrenAge] = useState([{ age: "" }]);
+  const [childrenAge, setChildrenAge] = useState([]);
   const [options, setOptions] = useState([
     {
       adult: 1,
@@ -49,18 +48,49 @@ const Header = ({ type }) => {
     const list = [...childrenAge];
     list.splice(index, 1);
     setChildrenAge(list);
+    setOptions(
+      options.map((x, i) => {
+        return {
+          ...x,
+          children: x.children - 1,
+        };
+      })
+    );
   };
 
   const handleChildrenAgeAdd = (index) => {
     setChildrenAge([...childrenAge, { age: "" }]);
-    let concat = [...childrenAge.concat(options)];
+    setOptions(
+      options.map((x, i) => {
+        return {
+          ...x,
+          children: x.children + 1,
+        };
+      })
+    );
+
+    console.log(childrenAge);
   };
 
-  const addNewRoom = () => {
+  // Add new room
+  const addNewRoom = (i) => {
     let newRoom = { adult: 1, children: 0 };
     setOptions([...options, newRoom]);
+
+    let data = [...childrenAge];
+    data.splice(data[i], data.length -i);
+    console.log(i);
+    setChildrenAge(data);
+
+    // let empt = [...childrenAge.splice(i, i)];
+    // setChildrenAge([...childrenAge[i],[newAge[i]]]);
+
+    // let fin = childrenAge.filter((x) => x[i] === newAge[i]);
+    // setChildrenAge(fin);
+    console.log("IIII", options, "ages", childrenAge, "data", data);
   };
 
+  // Remove the current room
   const removeRoom = (index) => {
     let data = [...options];
     data.splice(index, 1);
@@ -129,6 +159,15 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     navigate("/hotels", { state: { destination, date, options } });
+  };
+
+  // Calculate adults
+  Array.prototype.sum = function (prop) {
+    var total = 0;
+    for (var i = 0, _len = this.length; i < _len; i++) {
+      total += this[i][prop];
+    }
+    return total;
   };
 
   return (
@@ -240,7 +279,9 @@ const Header = ({ type }) => {
                     setOpenDate(false);
                   }}
                 >
-                  {`${options[0].adult} adult · ${options[0].children} children · ${options[0].room} room`}
+                  {`${
+                    options.sum("adult") + options.sum("children")
+                  } Travelers · ${options[0].room} room`}
                 </span>
                 {openOptions && (
                   <div className="options">
@@ -279,16 +320,16 @@ const Header = ({ type }) => {
                               <button
                                 disabled={room.children <= 0}
                                 className="optionCounterButton"
-                                onClick={() => handleChildrenAgeAdd()}
+                                onClick={() => handleRemoveChildrenAge(i)}
                               >
                                 -
                               </button>
                               <span className="optionCounterNumber">
-                                {options[0].children}
+                                {room.children}
                               </span>
                               <button
                                 className="optionCounterButton"
-                                onClick={handleChildrenAgeAdd}
+                                onClick={() => handleChildrenAgeAdd(i, "i")}
                                 disabled={room.children > 8}
                               >
                                 +
@@ -296,23 +337,25 @@ const Header = ({ type }) => {
                             </div>
                           </div>
                           <div className="optionItemAge">
-                            {childrenAge.map((singleChild, index) => (
-                              <div className="optionAge">
-                                <select
-                                  key={index}
-                                  className="selectAge"
-                                  name="age"
-                                  id="age"
-                                  onChange={(e) => handleChildrenAge(e, index)}
-                                >
-                                  {agesArr.map((age, index) => (
-                                    <option value={age} key={index}>
-                                      {age} years old
-                                    </option>
-                                  ))}
-                                </select>
-                              </div>
-                            ))}
+                            {childrenAge.length >= 1 &&
+                              childrenAge.map((singleChild, index) => (
+                                <div className="optionAge" key={index}>
+                                  <select
+                                    className="selectAge"
+                                    name="age"
+                                    id="age"
+                                    onChange={(e) =>
+                                      handleChildrenAge(e, index)
+                                    }
+                                  >
+                                    {agesArr.map((age, index) => (
+                                      <option value={age} key={index}>
+                                        {age} years old
+                                      </option>
+                                    ))}
+                                  </select>
+                                </div>
+                              ))}
                           </div>
                           {i > 0 && (
                             <button
@@ -322,17 +365,17 @@ const Header = ({ type }) => {
                               Remove room
                             </button>
                           )}
+                          <button
+                            className="btnAddRoom"
+                            onClick={() => addNewRoom(i)}
+                            // disabled={options[0].room.length  > 3}
+                          >
+                            Add another room
+                          </button>
                         </div>
                       );
                     })}
 
-                    <button
-                      className="btnAddRoom"
-                      onClick={addNewRoom}
-                      // disabled={options[0].room.length  > 3}
-                    >
-                      Add another room
-                    </button>
                     {/* 
                     <div className="optionItem">
                       <span className="optionText">room</span>
