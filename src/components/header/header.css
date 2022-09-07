@@ -1,5 +1,5 @@
 .header {
-  background-color: #FFF;
+  background-color: #fff;
   color: #474787;
   display: flex;
   justify-content: center;
@@ -65,7 +65,7 @@
 }
 
 .headerIcon {
-  color: #a5a5a5;
+  color: #474787;
 }
 
 .headerSearchItem {

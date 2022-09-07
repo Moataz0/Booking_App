@@ -34,6 +34,7 @@ const Header = ({ type }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [childrenAge, setChildrenAge] = useState([]);
   const [options, setOptions] = useState([initialOption]);
+
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -42,8 +43,22 @@ const Header = ({ type }) => {
     },
   ]);
 
-  const navigate = useNavigate();
+  function formatDate(date) {
+    var d = new Date(date),
+      month = "" + (d.getMonth() + 1),
+      day = "" + d.getDate(),
+      year = d.getFullYear();
 
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+
+    return [year, month, day].join("/");
+  }
+
+  // var startDate = date[0].startDate.toISOString().split("T")[0];
+  // var endDate = date[0].endDate.toISOString().split("T")[0];
+
+  const navigate = useNavigate();
   const [openOptions, setOpenOptions] = useState(false);
 
   const handleRemoveChildrenAge = (index) => {
@@ -71,6 +86,7 @@ const Header = ({ type }) => {
   // Add new room
   const addNewRoom = (i) => {
     setOptions([...options, initialOption]);
+    console.log(JSON.stringify(options));
   };
 
   // Remove the current room
@@ -86,6 +102,7 @@ const Header = ({ type }) => {
     setDistination(typing);
   };
   useEffect(() => {
+    console.log();
     const getData = async () => {
       if (destination.length >= 3) {
         setloadingResult(true);
@@ -132,10 +149,44 @@ const Header = ({ type }) => {
     );
   };
 
-
   const { dispatch } = useContext(SearchContext);
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
+    let myData = {
+      check_in: formatDate(date[0].startDate),
+      check_out: formatDate(date[0].endDate),
+      suppliers: [
+        {
+          id: 2,
+          name: "Hotelbeds",
+        },
+      ],
+      rooms: [
+        {
+          adult_no: 1,
+          child_age: [],
+        },
+      ],
+      location: {
+        code: 177,
+        name: "Ohtels Villa Dorada",
+        type: "city",
+      },
+    };
+    try {
+      const { data } = await axios.post("hotel/search", myData, {
+        headers: {
+          "Accept-Language": "ar",
+          "Search-Currency": "USD",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      console.log("Data sent", myData);
+      console.log("Dataaa.....", data);
+    } catch (err) {
+      console.log(err);
+    }
+
     dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
     navigate("/hotels", { state: { destination, date, options } });
   };
@@ -223,7 +274,7 @@ const Header = ({ type }) => {
                     editableDateInputs={true}
                     onChange={(item) => {
                       setDate([item.selection]);
-                      console.log("date.....",date);
+                      console.log("date.....", date);
                     }}
                     moveRangeOnFirstSelection={false}
                     ranges={date}

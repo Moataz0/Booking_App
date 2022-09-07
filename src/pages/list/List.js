@@ -1,10 +1,9 @@
-import axios from "axios";
 import { format } from "date-fns";
 import React, { useState, useEffect } from "react";
 import { DateRange } from "react-date-range";
 import { useLocation } from "react-router-dom";
 import { Navbar, Header, SearchItem } from "../../components";
-import instance from "../../hooks/endPoint";
+import axios from "../../hooks/endPoint";
 import useFetch from "../../hooks/useFetch";
 import "./list.css";
 function List() {
@@ -18,52 +17,6 @@ function List() {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
-  var startDate = date[0].startDate.toISOString().split("T")[0];
-  var endDate = date[0].endDate.toISOString().split("T")[0];
-
-  let myData = {
-    check_in: startDate,
-    check_out: endDate,
-    suppliers: [
-      {
-        id: 2,
-        name: "Hotelbeds",
-      },
-    ],
-    rooms: [
-      {
-        adult_no: 1,
-        child_age: [],
-      },
-    ],
-    location: {
-      code: 177,
-      name: "Ohtels Villa Dorada",
-      type: "city",
-    },
-  };
-
-  useEffect(() => {
-    const getHotelSearch = async () => {
-      try {
-        const { data } = await instance.post("hotel/search", myData, {
-          headers: {
-            "Accept-Language": "ar",
-            "Search-Currency": "USD",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getHotelSearch();
-  }, []);
-  console.log(
-    "the date....",
-    startDate.split("/").join("-"),
-    endDate.split("/").join("-")
-  );
   return (
     <div>
       {/* <Navbar /> */}
