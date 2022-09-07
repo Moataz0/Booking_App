@@ -1,8 +1,10 @@
+import axios from "axios";
 import { format } from "date-fns";
 import React, { useState, useEffect } from "react";
 import { DateRange } from "react-date-range";
 import { useLocation } from "react-router-dom";
 import { Navbar, Header, SearchItem } from "../../components";
+import instance from "../../hooks/endPoint";
 import useFetch from "../../hooks/useFetch";
 import "./list.css";
 function List() {
@@ -13,9 +15,15 @@ function List() {
   const [date, setDate] = useState(location.state.date);
   const [options, setOptions] = useState(location.state.options);
 
+  const [min, setMin] = useState(undefined);
+  const [max, setMax] = useState(undefined);
+
+  var startDate = date[0].startDate.toISOString().split("T")[0];
+  var endDate = date[0].endDate.toISOString().split("T")[0];
+
   let myData = {
-    check_in: "2022/09/24",
-    check_out: "2022/09/29",
+    check_in: startDate,
+    check_out: endDate,
     suppliers: [
       {
         id: 2,
@@ -34,21 +42,31 @@ function List() {
       type: "city",
     },
   };
-  const { data, loading, error } = useFetch("hotel/search", {
-    headers: {
-      "Accept-Language": "ar",
-      "Search-Currency": "USD",
-    },
-    myData,
-  });
 
   useEffect(() => {
-    console.log("data....",data);
+    const getHotelSearch = async () => {
+      try {
+        const { data } = await instance.post("hotel/search", myData, {
+          headers: {
+            "Accept-Language": "ar",
+            "Search-Currency": "USD",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getHotelSearch();
   }, []);
-
+  console.log(
+    "the date....",
+    startDate.split("/").join("-"),
+    endDate.split("/").join("-")
+  );
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Header type="List" />
       <div className="listContainer">
         <div className="listWrapper">
@@ -85,14 +103,22 @@ function List() {
                   <span className="lsOptionText">
                     min price <small>per night</small>
                   </span>
-                  <input type="number" className="lsOptionInput" />
+                  <input
+                    type="number"
+                    className="lsOptionInput"
+                    onChange={(e) => setMin(e.target.value)}
+                  />
                 </div>
 
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
                     max price <small>per night</small>
                   </span>
-                  <input type="number" className="lsOptionInput" />
+                  <input
+                    type="number"
+                    className="lsOptionInput"
+                    onChange={(e) => setMax(e.target.value)}
+                  />
                 </div>
 
                 <div className="lsOptionItem">
@@ -128,17 +154,17 @@ function List() {
             </div>
             <button>Search</button>
           </div>
-          <div className="listResult">
+          {/* <div className="listResult">
             {loading ? (
               <span className="load">Loading</span>
             ) : (
               <>
-                {data.map((item) => {
+                {data.data.map((item) => {
                   <SearchItem item={item} key={item.id} />;
                 })}
               </>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

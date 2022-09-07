@@ -9,7 +9,7 @@ import {
   faPlane,
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./header.css";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
@@ -17,6 +17,8 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useNavigate } from "react-router-dom";
 import axios from "../../hooks/endPoint";
+import { SearchContext } from "../../context/SearchContext";
+import HeaderTabs from "./headerTabs";
 
 const Header = ({ type }) => {
   const initialOption = {
@@ -128,17 +130,13 @@ const Header = ({ type }) => {
         return x;
       })
     );
-    // console.log("Options...", options[0]);
-    // console.log("data index is==> ", options, index);
   };
 
-  const handleOption = (name, op) => {
-    (name === "children") & (op === "i")
-      ? handleChildrenAgeAdd()
-      : handleRemoveChildrenAge(name);
-  };
+
+  const { dispatch } = useContext(SearchContext);
 
   const handleSearch = () => {
+    dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
     navigate("/hotels", { state: { destination, date, options } });
   };
 
@@ -151,36 +149,15 @@ const Header = ({ type }) => {
     return total;
   };
 
-  // console.log("options.length", options.length);
   return (
-    <div className=" header">
+    <div className="header">
       <div
         className={
           type === "List" ? "headerContainer listMode" : "headerContainer"
         }
       >
-        <div className="headerList">
-          <div className="headerListItem active">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attraction</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
-          </div>
-        </div>
+        {/* Tabs header */}
+        <HeaderTabs />
         {type !== "List" && (
           <>
             <h1 className="headerTitle">Find your next stay</h1>
@@ -190,7 +167,7 @@ const Header = ({ type }) => {
 
             <div className="headerSearch col-12">
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                <FontAwesomeIcon icon={faHotel} className="headerIcon" />
                 <input
                   value={destination.trimStart()}
                   type="text"
@@ -198,7 +175,7 @@ const Header = ({ type }) => {
                   className="headerSearchInput"
                   onChange={handleGetPlaces}
                 />
-                {loadingResult && <span className="loader"></span>}
+                {loadingResult && <span className="loaderHeader"></span>}
                 {showSearchResult && (
                   <div className="searchResult">
                     {searchResult.data.length === 0 && (
@@ -244,7 +221,10 @@ const Header = ({ type }) => {
                   <DateRange
                     minDate={new Date()}
                     editableDateInputs={true}
-                    onChange={(item) => setDate([item.selection])}
+                    onChange={(item) => {
+                      setDate([item.selection]);
+                      console.log("date.....",date);
+                    }}
                     moveRangeOnFirstSelection={false}
                     ranges={date}
                     className="date"
@@ -263,8 +243,11 @@ const Header = ({ type }) => {
                 >
                   {`${
                     options.sum("adult") + options.sum("children")
-                  } travelers - ${options[0].room} room`}
+                  } travelers - `}
+                  <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                  {` ${options.length} room`}
                 </span>
+
                 {openOptions && (
                   <div className="options">
                     {options.map((room, i) => {
@@ -359,29 +342,6 @@ const Header = ({ type }) => {
                         </div>
                       );
                     })}
-
-                    {/* 
-                    <div className="optionItem">
-                      <span className="optionText">room</span>
-                      <div className="optionCounter">
-                        <button
-                          disabled={options.room <= 1}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "d")}
-                        >
-                          -
-                        </button>
-                        <span className="optionCounterNumber">
-                          {options.room}
-                        </span>
-                        <button
-                          className="optionCounterButton"
-                          onClick={() => handleOption("room", "i")}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div> */}
                   </div>
                 )}
               </div>

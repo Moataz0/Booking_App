@@ -11,6 +11,8 @@ import {
 } from "../../components";
 import useFetch from "../../hooks/useFetch";
 import "./home.css";
+
+
 function Home() {
   const { data, loading, error } = useFetch("ping", {
     headers: {

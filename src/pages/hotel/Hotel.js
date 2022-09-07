@@ -59,7 +59,7 @@ function Hotel() {
   };
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Header type="List" />
       <div className="hotelContainer">
         {open && (
@@ -154,7 +154,7 @@ function Hotel() {
           </div>
         </div>
         <MailList />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
