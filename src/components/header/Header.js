@@ -22,17 +22,16 @@ import HeaderTabs from "./headerTabs";
 
 const Header = ({ type }) => {
   const initialOption = {
-    adult: 1,
+    adult_no: 1,
     children: 0,
     room: 1,
-    ages: [],
+    child_age: [],
   };
   const [destination, setDistination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [showSearchResult, setShowSearchResult] = useState(false);
   const [loadingResult, setloadingResult] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
-  const [childrenAge, setChildrenAge] = useState([]);
   const [options, setOptions] = useState([initialOption]);
 
   const [date, setDate] = useState([
@@ -43,17 +42,7 @@ const Header = ({ type }) => {
     },
   ]);
 
-  function formatDate(date) {
-    var d = new Date(date),
-      month = "" + (d.getMonth() + 1),
-      day = "" + d.getDate(),
-      year = d.getFullYear();
 
-    if (month.length < 2) month = "0" + month;
-    if (day.length < 2) day = "0" + day;
-
-    return [year, month, day].join("/");
-  }
 
   // var startDate = date[0].startDate.toISOString().split("T")[0];
   // var endDate = date[0].endDate.toISOString().split("T")[0];
@@ -67,7 +56,7 @@ const Header = ({ type }) => {
     newOptions[index] = {
       ...room,
       children: room.children - 1,
-      ages: room.ages.slice(0, room.ages.length - 1),
+      child_age: room.child_age.slice(0, room.child_age.length - 1),
     };
     setOptions(newOptions);
   };
@@ -78,7 +67,7 @@ const Header = ({ type }) => {
     newOptions[index] = {
       ...room,
       children: room.children + 1,
-      ages: [...room.ages, { age: "" }],
+      child_age: [...room.child_age, room.child_age[index]],
     };
     setOptions(newOptions);
   };
@@ -123,12 +112,17 @@ const Header = ({ type }) => {
     getData();
   }, [destination]);
 
-  const handleChildrenAge = (e, index) => {
-    const { value } = e.target;
-    const list = [...childrenAge];
-    console.log(value);
-    list[index] = value;
-    setChildrenAge(list);
+  const handleChildrenAge = (e) => {
+    let getAge = options.map((x, i) => {
+      const { value } = e.target;
+      const list = [...options];
+
+      list[i] = value;
+      console.log("new age..", list);
+      return { ...x, child_age: [list] };
+    });
+    console.log(options);
+    setOptions(getAge);
   };
 
   const handleAdults = (operation, index) => {
@@ -137,57 +131,22 @@ const Header = ({ type }) => {
         if ((operation === "i") & (i === index))
           return {
             ...x,
-            adult: x.adult + 1,
+            adult_no: x.adult_no + 1,
           };
         if ((operation === "d") & (i === index))
           return {
             ...x,
-            adult: x.adult - 1,
+            adult_no: x.adult_no - 1,
           };
         return x;
       })
     );
   };
 
-  const { dispatch } = useContext(SearchContext);
+  // const { dispatch } = useContext(SearchContext);
 
-  const handleSearch = async () => {
-    let myData = {
-      check_in: formatDate(date[0].startDate),
-      check_out: formatDate(date[0].endDate),
-      suppliers: [
-        {
-          id: 2,
-          name: "Hotelbeds",
-        },
-      ],
-      rooms: [
-        {
-          adult_no: 1,
-          child_age: [],
-        },
-      ],
-      location: {
-        code: 177,
-        name: "Ohtels Villa Dorada",
-        type: "city",
-      },
-    };
-    try {
-      const { data } = await axios.post("hotel/search", myData, {
-        headers: {
-          "Accept-Language": "ar",
-          "Search-Currency": "USD",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      console.log("Data sent", myData);
-      console.log("Dataaa.....", data);
-    } catch (err) {
-      console.log(err);
-    }
-
-    dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
+  const handleSearch = () => {
+    // dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
     navigate("/hotels", { state: { destination, date, options } });
   };
 
@@ -293,7 +252,7 @@ const Header = ({ type }) => {
                   }}
                 >
                   {`${
-                    options.sum("adult") + options.sum("children")
+                    options.sum("adult_no") + options.sum("children")
                   } travelers - `}
                   <FontAwesomeIcon icon={faBed} className="headerIcon" />
                   {` ${options.length} room`}
@@ -311,17 +270,17 @@ const Header = ({ type }) => {
                             <span className="optionText">Adult</span>
                             <div className="optionCounter">
                               <button
-                                disabled={room.adult <= 1}
+                                disabled={room.adult_no <= 1}
                                 className="optionCounterButton"
                                 onClick={() => handleAdults("d", i)}
                               >
                                 -
                               </button>
                               <span className="optionCounterNumber">
-                                {room.adult}
+                                {room.adult_no}
                               </span>
                               <button
-                                disabled={room.adult > 8}
+                                disabled={room.adult_no > 8}
                                 className="optionCounterButton"
                                 onClick={() => handleAdults("i", i)}
                               >
@@ -354,15 +313,20 @@ const Header = ({ type }) => {
                           </div>
                           {room.children > 0 && (
                             <div className="optionItemAge">
-                              {room.ages.map((singleChild, index) => (
+                              {room.child_age.map((singleChild, index) => (
                                 <div className="optionAge" key={index}>
                                   <select
                                     className="selectAge"
-                                    name="age"
-                                    id="age"
-                                    onChange={(e) =>
-                                      handleChildrenAge(e, index)
-                                    }
+                                    name="child_age"
+                                    value={singleChild}
+                                    id="child_age"
+                                    onChange={handleChildrenAge}
+                                    // onChange={(e) => {
+                                    //   const { value } = e.target;
+                                    //   // setOptions({ singleChild: value });
+                                    //   console.log("hey im age..", value);
+                                    //   console.log("hey option..", options);
+                                    // }}
                                   >
                                     {agesArr.map((age, index) => (
                                       <option value={age} key={index}>

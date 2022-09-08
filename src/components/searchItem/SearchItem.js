@@ -17,7 +17,7 @@ const SearchItem = ({ item }) => {
           <span className="siDistance">100K m from center</span>
           <span className="siTaxiOp">Free airport taxi</span>
           <span className="siSubtitle">{item.web}</span>
-          <span className="siFeatures">any desc</span>
+          {/* <span className="siFeatures">any desc</span> */}
           <span className="siCancelOp">Free cancellation </span>
           <span className="siCancelOpSubtitle">{item.description}</span>
         </div>
@@ -33,8 +33,12 @@ const SearchItem = ({ item }) => {
               {`${item.min_room_price_details.total_price.name} / ${item.min_room_price_details.total_price.value} - ${item.currency} `}
             </span>
             <span className="siTaxOp">{item.address}</span>
-
-            <button className="siCheckButton">See availability</button>
+            <Link
+              to={`/hotels/${item.key}`}
+              state={{ key: item.key, hotel_code: item.code }}
+            >
+              <button className="siCheckButton">See availability</button>
+            </Link>
           </div>
         </div>
       </div>
