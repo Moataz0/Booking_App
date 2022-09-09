@@ -7,16 +7,15 @@ import axios from "../../hooks/endPoint";
 import "./list.css";
 function List() {
   const location = useLocation();
-
   const [openDate, setOpenDate] = useState(false);
-  const [destination, setDestination] = useState(location.state.destination);
+  const [destination, setDestination] = useState(
+    location.state.searchResult.data[0]
+  );
   const [date, setDate] = useState(location.state.date);
   const [options, setOptions] = useState(location.state.options);
-
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
   const [loading, setLoading] = useState(false);
-
   const [resData, setResData] = useState([]);
 
   function formatDate(date) {
@@ -24,10 +23,8 @@ function List() {
       month = "" + (d.getMonth() + 1),
       day = "" + d.getDate(),
       year = d.getFullYear();
-
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;
-
     return [year, month, day].join("/");
   }
 
@@ -46,11 +43,7 @@ function List() {
         child_age: [],
       },
     ],
-    location: {
-      code: 177,
-      name: "Ohtels Villa Dorada",
-      type: "city",
-    },
+    location: destination,
   };
 
   useEffect(() => {

@@ -42,8 +42,6 @@ const Header = ({ type }) => {
     },
   ]);
 
-
-
   // var startDate = date[0].startDate.toISOString().split("T")[0];
   // var endDate = date[0].endDate.toISOString().split("T")[0];
 
@@ -89,6 +87,7 @@ const Header = ({ type }) => {
   const handleGetPlaces = (e) => {
     let typing = e.target.value;
     setDistination(typing);
+    setShowSearchResult(false);
   };
   useEffect(() => {
     console.log();
@@ -104,7 +103,9 @@ const Header = ({ type }) => {
         console.log("search...", data.data);
         setSearchResult(data);
         setloadingResult(false);
-        setShowSearchResult(true);
+        if (data.data.length >= 1) {
+          setShowSearchResult(true);
+        }
       } else {
         setShowSearchResult(false);
       }
@@ -147,7 +148,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     // dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
-    navigate("/hotels", { state: { destination, date, options } });
+    navigate("/hotels", { state: { searchResult, date, options } });
   };
 
   // Calculate adults
@@ -192,12 +193,17 @@ const Header = ({ type }) => {
                       <h5 className="notFound">Not found..</h5>
                     )}
                     <ul>
-                      {searchResult.data.map((res, index) => (
+                      {searchResult.data.map((res) => (
                         <li
                           key={res.code}
                           onClick={(e) => {
+                            console.log("first Click");
                             setDistination(e.target.innerText);
-                            // setShowSearchResult(false);
+
+                            if (destination === destination) {
+                              console.log("ressss", res);
+                              setShowSearchResult(false);
+                            }
                           }}
                         >
                           <FontAwesomeIcon
