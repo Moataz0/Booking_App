@@ -1,0 +1,1086 @@
+{
+  "data": [
+    {
+      "code": "773",
+      "name": "Belver Hotel da Aldeia",
+      "lag": "-8.227889271163917",
+      "lat": "37.09095335309623",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 312.39441999999997
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 312.39441999999997
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 985.63788
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 985.63788
+        }
+      },
+      "currency": "USD",
+      "address": "Areias de São João 280, 280 n/a",
+      "rate": 3,
+      "web": "www.hoteldaaldeia.com",
+      "email": "hotelaldeia@hoteis-belver.pt",
+      "description": "Albufeira is synonymous with two things - vacations and fun!\nBut if the fun sounds like something to adults, forget it, because the Hotel da Aldeia reigns the little ones. It is the ideal hotel to be with children, not only for being central, but also for the various services available for the little ones.\nIt's the perfect family vacation, with space for everyone, no hassles!\nJust 500 meters from Oura Beach, Hotel da Aldeia offers 133 rooms all with a balcony, garden and two swimming pools for adults and children. This, of course not to mention the restaurants and bars and car park.\nSituated less than 600 meters from the beach, in the center of Oura and all local entertainment, you will find our hotel.\nThe perfect place to get away from the daily hustle and bustle of major cities.",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000773/000773a_hb_r_009.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "836",
+      "name": "Jupiter Albufeira Hotel - Family & Fun",
+      "lag": "-8.228867",
+      "lat": "37.099563",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1003.1977555
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1003.1977555
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 2208.8215800000003
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 2208.8215800000003
+        }
+      },
+      "currency": "USD",
+      "address": "Rua Alexandre O'Neill, S/N",
+      "rate": 4,
+      "web": "www.jupiteralbufeirahotel.com",
+      "email": "reservas.albufeira@jupiterhotelgroup.com",
+      "description": "With many areas of leisure and fun, it is difficult to choose the highlight of the new Jupiter Albufeira Hotel - Family & Fun, the right choice for families who enjoy above all fun during their holidays.\n\nLocated in Albufeira, this newly renovated resort has separate swimming pools for children and adults, a water park with slides a children's water park, as well as 1 buffet restaurant, 2 à la carte restaurants, 1 pizzeria, 2 bars, entertainment for children and adults, all included in all-inclusive meal basis.\n\nBeing on vacation also means relaxing at the exclusive Soul SPA (not included) and a terrace bar (not included) where you can enjoy fantastic views of Albufeira and the sea.\nFamily-oriented the spacious rooms have balconies, sofa bed, Smart TV in addition to free WI-FI. The hotel also provides free scheduled shuttle service to Praia da Oura and Albufeira center.",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000836/000836a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "797",
+      "name": "Muthu Clube Praia da Oura",
+      "lag": "-8.223697",
+      "lat": "37.08755",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 468.296175
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 468.296175
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 905.0279075000001
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 905.0279075000001
+        }
+      },
+      "currency": "USD",
+      "address": "Rua Oliveira Martins",
+      "rate": 3,
+      "web": "www.muthuhotels.com",
+      "email": "RESERVATIONS.CC2@MUTHUHOTELS.COM",
+      "description": "Exquisitly build, the resort is perfectly positioned on the golden beach of Albufeira in the Algarve, Faro Airport is 24 kilometres away from the hotel. For many of the guests, it has become a home away from home, with many of them returning time and again to enjoy the great social atmosphere and some of the best sea views in the Algarve. Also there are disco, pubs and restaurants close to complex for those who are looking for adventures and get a fun night. on the vibrant town of Albufeira, that is only a short walk away. The resort provides swimming pool areas available for whole family, lush tropical gardens to take long walks and admire the green views, sauna on the wellness centre as a gym for health and fitness lovers. All rooms, suites or apartments have the amenities required for a comfortable stay, which includes appliances and comfortable furniture, as well as access to areas with balconies and the pool view.",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000797/000797a_hb_ba_020.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "837",
+      "name": "Vila Gale Ampalius",
+      "lag": "-8.117974",
+      "lat": "37.073302",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1760.3110415
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1760.3110415
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 2145.082088
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 2145.082088
+        }
+      },
+      "currency": "USD",
+      "address": "Alameda Praia da Marina, S/N",
+      "rate": 4,
+      "web": "https://www.vilagale.com/pt/hoteis/algarve/vila-gale-ampalius",
+      "email": "portugal.reservas@vilagale.com",
+      "description": "This modern hotel is situated in the popular holiday resort of Vilamoura, only a few steps from the casino and the internationally renowned marina. The lovely sandy beach is less than a minute, the resort centre with its large variety of restaurants, bars, pubs and shops is less than 5 minutes away. Several excellent golf courses are within easy reach, Faro International Airport can be reached within 30 minutes by car.",
+      "city": "QUARTEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000837/000837a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "775",
+      "name": "Santa Eulália Hotel Apartamento & Spa",
+      "lag": "-8.219200372695923",
+      "lat": "37.09013200078529",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 570.326635
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 570.326635
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1290.3997125
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1290.3997125
+        }
+      },
+      "currency": "USD",
+      "address": "Estrada De Santa Eulália, .",
+      "rate": 4,
+      "web": "http://www.conforhoteis.pt",
+      "email": "santaeulalia@conforhoteis.pt",
+      "description": "This luxurious and charming aparthotel boasts a great location a mere 5-minute walk from the most beautiful beaches of Albufeira. Guests can choose to simply relax by the quiet aparthotel facilities or at the beach, or access Albufeira's old town or the lively and popular Strip with numerous nightclubs, bars and restaurants. Moreover, Faro Airport is only 30 kilometres away from the premises, being very convenient for all kinds of travellers. All accommodation units are tastefully appointed and boast a charming and cosy style that will ensure that guests enjoy a pleasant stay. Some of them also come equipped with a complete kitchenette and there are some that take into account the special needs of those with reduced mobility. Visitors will appreciate the rejuvenating on-site spa facilities as well as the delicious Portuguese and Mediterranean dishes served at the restaurant.",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000775/000775a_hb_ba_021.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "26",
+      "name": "Vila Gale Atlantico",
+      "lag": "-8.314086",
+      "lat": "37.084364",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 692.94046
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 692.94046
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1652.7260275
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1652.7260275
+        }
+      },
+      "currency": "USD",
+      "address": "Praia da Galé - Apt. 2436, 2436",
+      "rate": 4,
+      "web": "WWW.VILAGALE.COM",
+      "email": "atlantico.reservas@Vilagale.pt",
+      "description": "This beach hotel is situated in the captivating Algarve in Southern Portugal. The hotel is located just 6 kms from the centre of the popular tourist area of Albufeira and a mere 300 metres from the beach. Guests will find public transport links just 100 metres away, while the airport is 50 kms from the hotel. This superb hotel offers the ideal setting for every type of traveller visiting the area. Whether doing business or seeking pleasure, guests will be impressed by the hotel's range of first class facilities and services, which have been specially designed to meet the individual needs of each and every traveller. The guest rooms are beautifully-presented and offer a cocoon of comfort and luxury in which travellers can relax and unwind at the end of the day.",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000026/000026a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "831",
+      "name": "Albufeira Sol Hotel & Spa",
+      "lag": "-8.222272",
+      "lat": "37.093563",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 952.2514649999999
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 952.2514649999999
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1414.933995
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1414.933995
+        }
+      },
+      "currency": "USD",
+      "address": "Corcovada, Areias de So Joo, S/N",
+      "rate": 4,
+      "web": "http://www.conforhoteis.pt",
+      "email": "albufeirasol@conforhoteis.pt",
+      "description": "Surrounded by delightful gardens, this modern hotel is situated in a great setting, only a 10-minute walk from the beaches of Praia da Oura and Praia da Santa Eulália, two of the most beautiful beaches of the area. The famous Albufeira strip with its countless restaurants, bars, pubs, shops and nightclubs is only minutes away, the historic old town of Albufeira can be easily reached.",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000831/000831a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "109",
+      "name": "Baia Grande",
+      "lag": "-8.2896",
+      "lat": "37.078663",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 615.117613
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 615.117613
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 994.4522875
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 994.4522875
+        }
+      },
+      "currency": "USD",
+      "address": "SESMARIAS Praia da Coelha, S/N",
+      "rate": 4,
+      "web": "www.baiaalgarve.com",
+      "email": "reservations.bg@baiaalgarve.com",
+      "description": "This hotel has an ideal location, just 800 metres from the beach. There is an idyllic bay in the vicinity. The hotel is 3 km from the city centre, where there are numerous shops, lively bars, restaurants and nightclubs. There is a shuttle bus to Albufeira and the beaches, and there are public transportation links close to the hotel. Faro Airport is located 46 km from the hotel. The hotel offers 111 high quality rooms and 10 suites. Guest rooms are equipped with a private bathroom with hairdryer, magnifying mirror and amenities, individual air conditioning, LCD cable TV with more than 60 Portuguese and international channels, minibar, safe and telephone with direct line to the outside. The hotel also features a spa where there are various types of therapies and treatments including massages, hot stones and bamboo therapy, facial treatments, epilation, relaxation room and sauna. The on-site restaurant serves a buffet breakfast or dinner with pool views while the bar offers live music and excellent cocktails.",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000109/000109a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "774",
+      "name": "Vitor's Plaza",
+      "lag": "-8.566752",
+      "lat": "37.13107",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 361.124798
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 361.124798
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 900.822598
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 900.822598
+        }
+      },
+      "currency": "USD",
+      "address": "Avenida Henry Cotton, Quatro Estradas De Alvor, Y/N",
+      "rate": 4,
+      "web": "https://www.vitors.pt/pt/",
+      "email": "reservas@vitorsplaza.pt",
+      "description": "This hotel is located in a quiet and privileged position, between Alvor, Praia da Rocha, and the lively cosmopolitan city of Portimão. In the centre of Alvor, a few kilometres away, there are many shopping and entertainment venues, in addition, Faro Airport is less than 55 kilometers away from the hotel. The hotel is near magnificent beaches, such as the Alemão Beach, Vau Beach, Rocha Beach and Alvor Beach. In the surroundings there are three of the best golf courses in the Algarve: Alto Golf, the Palmares Golf and Penina Golf Course, in addition to various water parks and theme parks. All flats have the amenities required for a comfortable stay as home appliances and cozy furniture, spectacular views are available for some of them from the window.",
+      "city": "PORTIMAO",
+      "image": "http://photos.hotelbeds.com/giata/00/000774/000774a_hb_ro_070.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "782",
+      "name": "Marina Rio",
+      "lag": "-8.675601",
+      "lat": "37.10793",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 541.1356810000001
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 541.1356810000001
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 541.1356810000001
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 541.1356810000001
+        }
+      },
+      "currency": "USD",
+      "address": "Avenida dos Descobrimentos, S/N",
+      "rate": 2,
+      "web": "www.marinario.com",
+      "email": "info@marinariohotel.pt",
+      "description": "This cosy, family-run hotel is excellently located in the centre of the charming town of Lagos, overlooking the promenade and the marina. The historic old town with its picturesque streets, shops, boutiques, restaurants, bars and attractions such as the ancient slave market or the statue of Henry the Navigator is just a few steps away. The sandy beaches of Meia-Praia and Dona Ana and several excellent golf courses are within easy reach.",
+      "city": "LAGOS",
+      "image": "http://photos.hotelbeds.com/giata/00/000782/000782a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "162",
+      "name": "فندق دوم خوسيه بيتش",
+      "lag": "-8.099732",
+      "lat": "37.066066",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 683.8896884999999
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 683.8896884999999
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1671.7927235
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1671.7927235
+        }
+      },
+      "currency": "USD",
+      "address": "Avenida Infante De Sagres, 143",
+      "rate": 4,
+      "web": "www.hoteldomjose.com",
+      "email": "reservas@hoteldomjose.com",
+      "description": "Situated directly on the fine sandy beach, this award-winning hotel enjoys panoramic views over the Atlantic Ocean. It is located in the centre of Quarteira with shopping facilities, restaurants, bars and nightclubs in the immediate vicinity. The resort of Vilamoura with its marina and casino is just a 5-minute drive away; several excellent golf courses are within easy reach. A bus stop is within an easy reach from the hotel's door. The international airport of Faro is a 20 minutes' drive away. The hotel offers 154 guest rooms decorated with modern furniture combined with oak wood flooring. In-room amenities include air conditioning, LCD TV, wireless internet, direct dial telephone, safety box and a private bathroom with amenities and hairdryer. The hotel also has a private beach with seafront promenade inviting guests to have a walk while sensing the aura of the Atlantic Ocean.",
+      "city": "QUARTEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000162/000162a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "856",
+      "name": "Parque Mourabel, Oásis Village, Pé do Lago",
+      "lag": "-8.125564",
+      "lat": "37.093516",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 272.01556999999997
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 272.01556999999997
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 584.4592325000001
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 584.4592325000001
+        }
+      },
+      "currency": "USD",
+      "address": "Caminho Do Lago - Parque Mourabel, S/N",
+      "rate": 4,
+      "web": "www.parquemourabel.com",
+      "email": "reservas@mouralar.pt",
+      "description": "Well-positioned in Vilamoura Suburb, this hotel is the ideal point of departure for excursions to Vilamoura. Falésia sandy beach is approximately 1.8 km away. A few metres from the hotel there are countless shopping facilities, bars and restaurants as well as public transportation links. This apartment complex lies in a lush garden just 2 km from the town centre.",
+      "city": "VILAMOURA",
+      "image": "http://photos.hotelbeds.com/giata/00/000856/000856a_hb_ro_009.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "778",
+      "name": "Hotel Apartamento Rosamar I",
+      "lag": "-8.364822199999935",
+      "lat": "37.1028526",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 388.5725675
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 388.5725675
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1031.1871925
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1031.1871925
+        }
+      },
+      "currency": "USD",
+      "address": "Rua Dom Joao II, S/N",
+      "rate": 1,
+      "web": "www.rosamar.eu",
+      "email": "al.rosamar@gmail.com",
+      "description": "This pleasant complex is located in the tourist town of Armação de Pêra approximately only 80 m from the beach. Shopping areas with shops, boutiques, bars and restaurants are to be found in the vicinity. Links to the public transport network lie about 300 m away.\n\nThis apartment complex features a 8-storey main building as well as a total of 42 apartments. Guests may make use of the foyer with a reception desk and 2 lifts in the air-conditioned main building. There is TV area and with air-conditioning. Those arriving by car may rent a nearby public car park.\n\nThe tastefully decorated apartments come with a combined living  bedroom, a separate bedroom, a bathroom, a kitchenette, a direct dial telephone, satellite  cable TV, air conditioning, heating, a balcony or terrace and a hire safe.",
+      "city": "ARMAÇAO DE PERA",
+      "image": "http://photos.hotelbeds.com/giata/00/000778/000778a_hb_ro_028.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "835",
+      "name": "Baia Cristal Beach & Spa Resort",
+      "lag": "-8.455631",
+      "lat": "37.093427",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 505.80911150000003
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 505.80911150000003
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 833.3702215000001
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 833.3702215000001
+        }
+      },
+      "currency": "USD",
+      "address": "Vale De Centeanes, S/N",
+      "rate": 4,
+      "web": "www.baiaalgarve.com",
+      "email": "manager.bc@baiaalgarve.com",
+      "description": "This hotel is located on a cliff-top overlooking the Atlantic Ocean, just 300 metres from the beach, easily reached by going down some stairs. The centre of Carvoeiro is located around 2 km away. Public transportation links are right in front of the hotel. There is a plethora of shops, restaurants, bars and nightclubs 1.7 km from the hotel.",
+      "city": "CARVOEIRO",
+      "image": "http://photos.hotelbeds.com/giata/00/000835/000835a_hb_ro_208.JPG",
+      "key": 15157332706995
+    },
+    {
+      "code": "783",
+      "name": "Pinhal do Sol",
+      "lag": "-8.077902999999992",
+      "lat": "37.08312400000001",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 206.5722875
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 206.5722875
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 445.1029575
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 445.1029575
+        }
+      },
+      "currency": "USD",
+      "address": "Sitio Do Semino, S/N",
+      "rate": 4,
+      "web": "htt://www.hotelpinhaldosol.com",
+      "email": "reservas@hotelpinhaldosol.com",
+      "description": "This hotel is located between Vale do Lobo and Vilamoura. Situated near the beach in Quarteira, the hotel is close to Aqua Show Park, and Trafal Beach. The centre of Quarteira, with a diverse range of shopping and entertainment venues is around 3 km away, and is easily reached with the hotel shuttle bus. The nearest bars, restaurants and public transportation links are 1 km away.",
+      "city": "QUARTEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000783/000783a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "777",
+      "name": "Zodiaco",
+      "lag": "-8.084364700000037",
+      "lat": "37.0703599",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 263.5951025
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 263.5951025
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 330.86035749999996
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 330.86035749999996
+        }
+      },
+      "currency": "USD",
+      "address": "Avenida Da Fonte Santa, NA",
+      "rate": 3,
+      "web": "http://www.hotel-zodiaco.com",
+      "email": "mail@hotel-zodiaco.com",
+      "description": "Hotel Zodiaco has a privileged location, 10 minutes away (walking) from the “Forte Novo” beach, 3 km from the biggest tourist and golf centre in the Algarve, Vilamoura.\nOffers 60 doubles, all equipped with satellite tv, direct dial telephone, air conditioning / heating system, internet and private safes.\nBar/snack-bar, tv room, restaurant, snooker (pool table) and conference rooms. Gardened areas, swimming-pool and free internet wireless on all areas.\nFREE private parking.",
+      "city": "QUARTEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000777/000777a_hb_l_015.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "318",
+      "name": "Carvoeiro Hotel",
+      "lag": "-8.469196",
+      "lat": "37.104123",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 446.53099
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 446.53099
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 521.872015
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 521.872015
+        }
+      },
+      "currency": "USD",
+      "address": "Sitio Mato Serrão, S/N",
+      "rate": 4,
+      "web": "www.carvoeirohotel.pt",
+      "email": "RESERVAS@CARVOEIROHOTEL.PT",
+      "description": "The hotel is located near the Carvoeiro town, but far from the busy centre, in a calm environment; the hotel is close to the famous nearby beaches. The hotel has a spacious garden. It is centrally located close to the main tourist attractions. It is 1.2 kilometres to the sea, the beach, a plethora of shops, restaurants, bars, pubs, nightclubs and public transportation.",
+      "city": "CARVOEIRO",
+      "image": "http://photos.hotelbeds.com/giata/00/000318/000318a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "112",
+      "name": "Aqualuz Lagos by The Editory",
+      "lag": "-8.6760776",
+      "lat": "37.0947222",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 481.0499825
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 481.0499825
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1301.9224575
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1301.9224575
+        }
+      },
+      "currency": "USD",
+      "address": "R. Sacadura Cabral, 8",
+      "rate": 4,
+      "web": "https://www.editoryhotels.com/aqualuz-lagos/",
+      "email": "reservas.aqualuzlagos@editoryhotels.pt",
+      "description": "This delightful complex enjoys a central setting, lying on a slope in the south of Lagos. The hotel is situated just 600 metres away from Dona Ana Beach and 800 metres from the centre of the resort; Faro Airport is less than 70 kilometers away. Guests will find themselves just a short distance away from the commercial areas, shopping opportunities, dining options and entertainment venues. This wonderful complex appeals to guests who are looking to get away from it all, yet who are eager to be close to the heart of the entertainment.  It enjoys an attractive architectural style, bathing guests in comfort and convenience. The studios and flats are tastefully designed, offering a relaxing setting in which to completely  unwind at the end of the day. The accommodation options provide a veritable home away from home, and come complete with modern amenities.",
+      "city": "LAGOS",
+      "image": "http://photos.hotelbeds.com/giata/00/000112/000112a_hb_ro_085.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "43",
+      "name": "Vila Gale Albacora",
+      "lag": "-7.626959",
+      "lat": "37.118922",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 615.4820075
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 615.4820075
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 2169.1813675000003
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 2169.1813675000003
+        }
+      },
+      "currency": "USD",
+      "address": "Quatro Aguas, S/N",
+      "rate": 4,
+      "web": "www.vilagale.com",
+      "email": "portugal.reservas@vilagale.com",
+      "description": "This superb beach hotel is situated just 400 metres from the golden sands of the renowned Algarve seashore. Guests will appreciate the hotel's proximity to the beach, where they can spend dreamy days relaxing to the therapeutic sounds of the rolling waves, yet are just 4 kms from the lively centre of Tavira. Guests will find a host of charming restaurants, lively bars, vibrant nightclubs and delightful shops within 3 kms of the hotel. Guests will be immersed in tradition and culture in this hotel, which was once an old tuna fish market. Situated in the heart of the Parque Natural da Ria Formosa, the hotel offers guests relaxing, serene surroundings ensuring unrivalled tranquility. The hotel provides a range of amenities and facilities that will ensure a restful stay for every type of traveller and guests of every age.",
+      "city": "TAVIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000043/000043a_hb_ro_021.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "296",
+      "name": "Albufeira Jardim Apartments",
+      "lag": "-8.259133100509645",
+      "lat": "37.08900312592453",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 232.62157
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 232.62157
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 441.9514375
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 441.9514375
+        }
+      },
+      "currency": "USD",
+      "address": "Cerro Da Piedade Apartado 2101",
+      "rate": 4,
+      "web": null,
+      "email": "reservas@albufeirajardim.com.pt",
+      "description": "These flats are located in a hill near the city centre, inserted in a condominium, provides easy access to Albufeira's shopping, sightseeing and entertainment area. Praia dos Pescadores is a 10-minute walk away. There are many entertainment options in the area, such as ZooMarine, Aqualand Algarve and Albufeira Beach, Praia de Gale, and Algarve Shopping Centre, all a 20-minute drive from the apartments. Marina De Albufeira is a 5-minute drive away and airport is 1 hour away by car. The property offers a variety of facilities and services for guests convenience.\n\n\n\nPlease note, ALL guests are required to leave a SAFETY DEPOSIT at check-in. The deposit is refunded at check out upon inspection of the apatment. Should you prefer, credit card details may be used, in this case we reserve the right to validate said credit card details. Any aplicable charges will be made with the concent of the holder.\n\nThe \"payment\" of the deposit is MANDATORY at the check-in under penalty of not being authorized to get in the apartment, in case the guest refuses to \"pay\".\n\nThank you very much for your attention on this matter.\n\nPRICES APPLICABLE PER APARTMENT:\n\nT0 – 150€\nT1 – 200€\nT2 – 250€",
+      "city": "ALBUFEIRA",
+      "image": "http://photos.hotelbeds.com/giata/00/000296/000296a_hb_ro_047.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "113",
+      "name": "Tivoli Lagos",
+      "lag": "-8.676571",
+      "lat": "37.105819",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 606.3229024999999
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 606.3229024999999
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 1816.6247644999999
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 1816.6247644999999
+        }
+      },
+      "currency": "USD",
+      "address": "Antonio Crisogono Dos Santos, 1",
+      "rate": 3,
+      "web": "http://www.minorhotels.com/en/tivoli/tivoli-lagos",
+      "email": "lagos@tivoli-hotels.com",
+      "description": "Occupying a central location in the Algarve city of Lagos, it's close to the marina and old town. It is a 10-minute drive from gorgeous beaches too and airport is less than 30 minutes away by car. Hotel has several restaurants, including a classic and authentic national eatery that comes highly recommended. At the main pub, guests can enjoy an aperitif or live music evenings. Guests love the many quirky indoor and outdoor public spaces, and the hotel's Beach Club on the white sands of Meia Praia is the perfect spot for pool parties and weddings.Combine history and culture with beachside bliss when guests holiday at the stylish hotel. The hotel's elegant rooms all have a balcony or terrace that overlooks the resort, Lagos or Atlantic Ocean. Our top-floor suite even has views that stretch all the way across the city and beach to Portimao. All rooms are air conditioned and equipped with all amenities needed.",
+      "city": "LAGOS",
+      "image": "http://photos.hotelbeds.com/giata/00/000113/000113a_hb_ro_250.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "795",
+      "name": "Portimão Center Hotel",
+      "lag": "-8.548178",
+      "lat": "37.139177",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 206.72001500000002
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 206.72001500000002
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 206.72001500000002
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 206.72001500000002
+        }
+      },
+      "currency": "USD",
+      "address": "Largo do Fojo Lote 36, .",
+      "rate": 3,
+      "web": "www.hotelmirachorosol.com",
+      "email": "geral@portimaocenterhotel.com",
+      "description": "Enjoying Portugal's sunny southern coast, the hotel is in the outskirts of the bustling city of Portimão, an area popular for its laid back Mediterranean culture and stunning old architecture. The hotel is only 10 minutes from the city centre, putting guests close to the town's amenities, including shuttle stations and exquisite seafood restaurants. The beach is about 2.5 km away. There are several shops, boutiques, bars and restaurants around the hotel.",
+      "city": "PORTIMAO",
+      "image": "http://photos.hotelbeds.com/giata/00/000795/000795a_hb_ro_028.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "42",
+      "name": "Colina dos Mouros",
+      "lag": "-8.433982",
+      "lat": "37.187333",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 207.310925
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 207.310925
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 503.238653
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 503.238653
+        }
+      },
+      "currency": "USD",
+      "address": "Pocinho Santo, S/N",
+      "rate": 4,
+      "web": "www.colinahotels.com",
+      "email": "reservations@colinahotels.com",
+      "description": "Boasting incredible, panoramic views over the city of Silves in the Algarve region, this enchanting and comfortable hotel boasts a great and convenient position in one of the most important historical and cultural areas of the region. From the property, visitors can admire two of the city's main sightseeing attractions, including Silves Castle and the well-known Cathedral. All guest rooms are simply but comfortably equipped with all the necessary amenities to spend a nice time. All of them are conveniently designed to provide a pleasant and relaxed stay. There are some guest rooms that are barrier free, having in mind everyone who may wish to stay at this hotel for holidays or business. Guests can wake up every morning to an exquisite, hearty breakfast at the hotel's panoramic terrace and enjoy a refreshing swim at the wonderful on-site swimming pool.",
+      "city": "SILVES",
+      "image": "http://photos.hotelbeds.com/giata/00/000042/000042a_hb_r_001.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "914",
+      "name": "Tivoli Carvoeiro",
+      "lag": "-8.460043",
+      "lat": "37.094161",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 974.80453
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 974.80453
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 3189.042785
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 3189.042785
+        }
+      },
+      "currency": "USD",
+      "address": "Vale Covo Caixa Postal 1299, 293",
+      "rate": 4,
+      "web": "www.tivolicarvoeiro.com",
+      "email": "carvoeiro@tivoli-hotels.com",
+      "description": "Tucked into a cliffside overlooking the glistening Atlantic Ocean, the hotel is a jewel in the Algarve's crown. This luxury resort is a 10-minute walk from the beach, and guests can explore more of this stunning stretch of coastline on the Seven Hanging Valleys Trail. Visitors will be spoilt for choice by the pubs and restaurants and experience fine drinks and authentic local cuisine in one of the restaurants, with freshly caught seafood a menu highlight. Whether guests want to pamper theirself with an organic seaweed treatment in the spa, invigorate theirself in the pool, dive beneath the ocean or organize a game of golf, the hotel's incredible facilities and staff will make theirself stay a memorable one. The hotel has several spacious rooms on different floors, with most offering a balcony or terrace to experience the spectacular views. Decorated in elegant colors to represent the sea, the rooms are equipped with all home appliances needed to ensure a home experience stay.",
+      "city": "Carvoeiro Lagoa",
+      "image": "http://photos.hotelbeds.com/giata/00/000914/000914a_hb_ba_961.jpg",
+      "key": 15157332706995
+    },
+    {
+      "code": "25",
+      "name": "Mirachoro Carvoeiro",
+      "lag": "-8.465097",
+      "lat": "37.096038",
+      "min_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 591.7372740000001
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 591.7372740000001
+        }
+      },
+      "max_room_price_details": {
+        "tax_amount": {
+          "name": "tax",
+          "value": 0
+        },
+        "fare_price": {
+          "name": "fare price",
+          "value": 591.7372740000001
+        },
+        "total_price": {
+          "name": "total price",
+          "value": 591.7372740000001
+        }
+      },
+      "currency": "USD",
+      "address": "Estrada do Farol, S/N",
+      "rate": 4,
+      "web": "http://www.hoteismirachoro.com/",
+      "email": "MIRACHOROPRAIA@MAIL.TELEPAC.PT",
+      "description": "This hotel is situated in Carvoeiro, close to the town centre, Carvoeiro Beach, and Paraiso Beach. Various restaurants and bars as well as a bus stop are located nearby. Vale Centianes Beach, near the famous rock formations of Algar Seco, is 10 minutes away by foot. Also nearby are Vale Covo Beach and Vale de Milho Golf. Faro Airport lies some 60 km away. The hotel offers 130 spacious guest rooms. Each room is fitted with air conditioning, hair dryer, satellite TV, balcony and bath amenities. This comfortable hotel offers outdoor and indoor pools and a sun terrace with loungers and palm trees. Guests can enjoy a hotel spa and wellness area to relax during the stay. A massage is also available for guests who need to immerse in a completely relaxing experience by the team of professional therapists. It is a perfect place to enjoy the magnificent environment that this place has to offer.",
+      "city": "CARVOEIRO",
+      "image": "http://photos.hotelbeds.com/giata/00/000025/000025a_hb_f_907.jpg",
+      "key": 15157332706995
+    }
+  ],
+  "warning": [
+    {
+      "supplier_setting_name": "hotels-2",
+      "message": "access to this API has been disallowed",
+      "code": 403
+    }
+  ]
+}

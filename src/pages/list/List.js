@@ -11,6 +11,7 @@ function List() {
   const [destination, setDestination] = useState(
     location.state.searchResult.data[0]
   );
+  const [getAges, setGetAges] = useState(location.state.updateAges);
   const [date, setDate] = useState(location.state.date);
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(undefined);
@@ -28,6 +29,9 @@ function List() {
     return [year, month, day].join("/");
   }
 
+  console.log("options", options[0]);
+  var arrChildAges = getAges.map(Number);
+
   let myData = {
     check_in: formatDate(date[0].startDate),
     check_out: formatDate(date[0].endDate),
@@ -39,13 +43,14 @@ function List() {
     ],
     rooms: [
       {
-        adult_no: 5,
-        child_age: [],
+        adult_no: options[0].adult_no,
+        child_age: arrChildAges,
       },
     ],
     location: destination,
   };
 
+  console.log("OPTION");
   useEffect(() => {
     setLoading(true);
     const getSearchHotels = async () => {
@@ -81,7 +86,7 @@ function List() {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>Destination</label>
-              <input placeholder={destination} type="text" />
+              <input placeholder={destination.name} type="text" />
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>

@@ -14,12 +14,12 @@ const SearchItem = ({ item }) => {
         </div>
         <div className="siDesc">
           <h1 className="siTitle">{item.name}</h1>
-          <span className="siDistance">100K m from center</span>
+          <span className="siDistance">{item.address}</span>
           <span className="siTaxiOp">Free airport taxi</span>
           <span className="siSubtitle">{item.web}</span>
           {/* <span className="siFeatures">any desc</span> */}
           <span className="siCancelOp">Free cancellation </span>
-          <span className="siCancelOpSubtitle">{item.description}</span>
+          <span className="siCancelOpSubtitle">{item.description.substring(0,100)}</span>
         </div>
         <div className="siDetails">
           {item.rate && (
@@ -30,9 +30,9 @@ const SearchItem = ({ item }) => {
           )}
           <div className="siDetailTexts">
             <span className="siPrice">
-              {`${item.min_room_price_details.total_price.name} / ${item.min_room_price_details.total_price.value} - ${item.currency} `}
+            {item.currency === "USD" && "$"}{item.min_room_price_details.total_price.value.toFixed(1)}
             </span>
-            <span className="siTaxOp">{item.address}</span>
+            <span className="siTaxOp">{item.currency === "USD" && "$"}{item.max_room_price_details.total_price.value.toFixed(1)} total</span>
             <Link
               to={`/hotels/${item.key}`}
               state={{ key: item.key, hotel_code: item.code }}

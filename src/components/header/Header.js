@@ -33,7 +33,7 @@ const Header = ({ type }) => {
   const [loadingResult, setloadingResult] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
   const [options, setOptions] = useState([initialOption]);
-
+  const [updateAges, setUpdateAges] = useState([]);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -73,7 +73,7 @@ const Header = ({ type }) => {
   // Add new room
   const addNewRoom = (i) => {
     setOptions([...options, initialOption]);
-    console.log(JSON.stringify(options));
+    console.log("Add new room",options);
   };
 
   // Remove the current room
@@ -96,7 +96,7 @@ const Header = ({ type }) => {
         setloadingResult(true);
         const { data } = await axios.get(`hotel/matching?key=${destination}`, {
           headers: {
-            "Accept-Language": "ar",
+            "Accept-Language": "en",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
@@ -113,17 +113,23 @@ const Header = ({ type }) => {
     getData();
   }, [destination]);
 
-  const handleChildrenAge = (e) => {
+  const handleChildrenAge = (i, e) => {
+    const updateAge = Array.from(
+      e.target.selectedOptions,
+      (option) => option.value
+    );
+    console.log(updateAge, i);
+    setUpdateAges((prev) => [...prev, updateAge]);
     let getAge = options.map((x, i) => {
-      const { value } = e.target;
-      const list = [...options];
-
-      list[i] = value;
-      console.log("new age..", list);
-      return { ...x, child_age: [list] };
+      return {
+        ...x,
+        child_age: [updateAge[i]],
+      };
     });
-    console.log(options);
-    setOptions(getAge);
+
+    // setOptions(getAge);
+
+    // console.log(options[0].child_age);
   };
 
   const handleAdults = (operation, index) => {
@@ -148,7 +154,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     // dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
-    navigate("/hotels", { state: { searchResult, date, options } });
+    navigate("/hotels", { state: { searchResult, date, options, updateAges } });
   };
 
   // Calculate adults
@@ -180,7 +186,7 @@ const Header = ({ type }) => {
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faHotel} className="headerIcon" />
                 <input
-                  value={destination.trimStart()}
+                  value={destination}
                   type="text"
                   placeholder="Where are you going"
                   className="headerSearchInput"
@@ -321,12 +327,15 @@ const Header = ({ type }) => {
                             <div className="optionItemAge">
                               {room.child_age.map((singleChild, index) => (
                                 <div className="optionAge" key={index}>
+                                  <p style={{ color: "red" }}>{singleChild}</p>
                                   <select
                                     className="selectAge"
                                     name="child_age"
                                     value={singleChild}
                                     id="child_age"
-                                    onChange={handleChildrenAge}
+                                    onChange={(e) =>
+                                      handleChildrenAge(index, e)
+                                    }
                                     // onChange={(e) => {
                                     //   const { value } = e.target;
                                     //   // setOptions({ singleChild: value });
