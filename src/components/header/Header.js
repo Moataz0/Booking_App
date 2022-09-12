@@ -73,7 +73,7 @@ const Header = ({ type }) => {
   // Add new room
   const addNewRoom = (i) => {
     setOptions([...options, initialOption]);
-    console.log("Add new room",options);
+    console.log("Add new room", options);
   };
 
   // Remove the current room
@@ -100,7 +100,6 @@ const Header = ({ type }) => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        console.log("search...", data.data);
         setSearchResult(data);
         setloadingResult(false);
         if (data.data.length >= 1) {
@@ -376,7 +375,11 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtnSearch" onClick={handleSearch}>
+                <button
+                  className="headerBtnSearch"
+                  onClick={handleSearch}
+                  disabled={searchResult.length < 1}
+                >
                   Search
                 </button>
               </div>

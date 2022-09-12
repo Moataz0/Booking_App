@@ -1,0 +1,8 @@
+.rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.svg-inline--fa .fa-star {
+    color: gold;
+} 

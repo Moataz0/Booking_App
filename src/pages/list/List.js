@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import { Navbar, Header, SearchItem } from "../../components";
 import axios from "../../hooks/endPoint";
 import "./list.css";
+import { ToastContainer, toast } from "react-toastify";
+
 function List() {
   const location = useLocation();
   const [openDate, setOpenDate] = useState(false);
@@ -12,6 +14,7 @@ function List() {
     location.state.searchResult.data[0]
   );
   const [getAges, setGetAges] = useState(location.state.updateAges);
+  const [errMsg, setErrMsg] = useState("");
   const [date, setDate] = useState(location.state.date);
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(undefined);
@@ -19,6 +22,7 @@ function List() {
   const [loading, setLoading] = useState(false);
   const [resData, setResData] = useState([]);
 
+  const notify = () => toast(errMsg);
   function formatDate(date) {
     var d = new Date(date),
       month = "" + (d.getMonth() + 1),
@@ -57,7 +61,7 @@ function List() {
       try {
         const { data } = await axios.post("hotel/search", myData, {
           headers: {
-            "Accept-Language": "ar",
+            "Accept-Language": "en",
             "Search-Currency": "USD",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -69,7 +73,8 @@ function List() {
         console.log(" data.....", data.data);
         setResData(data.data);
       } catch (err) {
-        console.log(err);
+        setErrMsg(err.response.data.message);
+        notify();
       }
       setLoading(false);
     };
@@ -166,7 +171,7 @@ function List() {
               </div>
             ))}
 
-            <button>Search</button>
+            <button className={errMsg && "search"}>Search</button>
           </div>
           <div className="listResult">
             {loading ? (
@@ -177,6 +182,15 @@ function List() {
                   <SearchItem item={item} key={item._id} />
                 ))}
               </>
+            )}
+
+            {errMsg && (
+              <div className="errMsg">
+                <h3>Oops! &#128528; </h3>
+                <div className="resMsg">
+                  <h3>{errMsg}</h3>
+                </div>
+              </div>
             )}
           </div>
         </div>

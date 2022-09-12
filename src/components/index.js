@@ -6,3 +6,4 @@ export {default as FeaturedProperties} from "./featuredProperties/FeaturedProper
 export {default as MailList} from "./mailList/MailList"
 export {default as Footer} from "./footer/Footer"
 export {default as SearchItem} from "./searchItem/SearchItem"
+export {default as Rating} from "./rating/Rating"

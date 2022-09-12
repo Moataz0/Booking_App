@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, List, Hotel } from "./pages";
-
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 

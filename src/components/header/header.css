@@ -49,6 +49,9 @@
   font-weight: 600;
   cursor: pointer;
 }
+.headerBtnSearch:disabled {
+  background-color: #cbcbd3;
+}
 .headerSearch {
   /* height: 30px; */
   background-color: #fff;
