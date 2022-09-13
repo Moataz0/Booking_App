@@ -175,7 +175,9 @@ function List() {
           </div>
           <div className="listResult">
             {loading ? (
-              <span className="loader"></span>
+               <div className="containerLoader">
+               <span className="loader"></span>
+             </div>
             ) : (
               <>
                 {resData.map((item) => (

@@ -335,12 +335,6 @@ const Header = ({ type }) => {
                                     onChange={(e) =>
                                       handleChildrenAge(index, e)
                                     }
-                                    // onChange={(e) => {
-                                    //   const { value } = e.target;
-                                    //   // setOptions({ singleChild: value });
-                                    //   console.log("hey im age..", value);
-                                    //   console.log("hey option..", options);
-                                    // }}
                                   >
                                     {agesArr.map((age, index) => (
                                       <option value={age} key={index}>

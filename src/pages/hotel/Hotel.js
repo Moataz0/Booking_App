@@ -40,11 +40,13 @@ function Hotel() {
       {/* <Navbar /> */}
       <Header type="List" />
       {loading ? (
-        <span className="loader"></span>
+        <div className="containerLoader">
+          <span className="loader"></span>
+        </div>
+        
       ) : (
         <HotelDetails details={roomDetails} />
       )}
-      <MailList />
       {/* <Footer /> */}
     </>
   );

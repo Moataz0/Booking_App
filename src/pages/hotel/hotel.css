@@ -4,7 +4,10 @@
   align-items: center;
   margin-top: 20px;
 }
-
+.roomWrapper {
+  display: flex;
+  justify-content: center;
+}
 .hotelWrapper {
   width: 100%;
   max-width: 1024px;
@@ -13,7 +16,16 @@
   gap: 10px;
   position: relative;
 }
+.roomWrapper {
+  display: flex;
+  justify-content: center;
+}
 
+.firstContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .bookNow {
   position: absolute;
   top: 10px;
@@ -38,11 +50,10 @@
   gap: 10px;
 }
 
-.hotelDistance {
+.hotelWeb {
   color: #0071c2;
   font-weight: 500;
 }
-
 .hotelPriceHighlight {
   color: #008009;
   font-weight: 500;
@@ -79,16 +90,24 @@
   font-size: 14px;
   margin-top: 20px;
 }
-
-.hotelDetailsPrice {
-  flex: 1;
-  background-color: #ebf3ff;
-  padding: 20px;
+.rightContent {
   display: flex;
+  flex: 1 1;
   flex-direction: column;
-  gap: 20px;
+  align-self: flex-start;
 }
+.hotelDetailsPrice {
 
+  background-color: #ebf3ff;
+  justify-content: center;
+
+  padding: 20px;
+
+
+}
+.mapStyle {
+  width: 100%;
+}
 .hotelDetailsPrice > h1 {
   font-size: 18px;
   color: #555;
@@ -109,7 +128,7 @@
   border-radius: 5px;
 }
 
-.slider{
+.slider {
   position: sticky;
   top: 0;
   left: 0;
@@ -121,7 +140,7 @@
   align-items: center;
 }
 
-.sliderWrapper{
+.sliderWrapper {
   width: 100%;
   height: 100%;
   display: flex;
@@ -129,12 +148,12 @@
   align-items: center;
 }
 
-.sliderImg{
+.sliderImg {
   width: 80%;
   height: 80vh;
 }
 
-.close{
+.close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -143,9 +162,114 @@
   cursor: pointer;
 }
 
-.arrow{
+.arrow {
   margin: 20px;
   font-size: 50px;
   color: lightgray;
   cursor: pointer;
+}
+.containerLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  /* position: absolute; */
+  left: 8px;
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #474787;
+  border-bottom-color: #d3cece;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Maaaaaaaaaaaaaaaaaps */
+
+/* The location pointed to by the popup tip. */
+.popup-tip-anchor {
+  height: 0;
+  position: absolute;
+  /* The max width of the info window. */
+  width: 200px;
+}
+/* The bubble is anchored above the tip. */
+.popup-bubble-anchor {
+  position: absolute;
+  width: 100%;
+  bottom: /* TIP_HEIGHT= */ 8px;
+  left: 0;
+}
+/* Draw the tip. */
+.popup-bubble-anchor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Center the tip horizontally. */
+  transform: translate(-50%, 0);
+  /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
+  width: 0;
+  height: 0;
+  /* The tip is 8px high, and 12px wide. */
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: /* TIP_HEIGHT= */ 8px solid white;
+}
+/* The popup bubble itself. */
+.popup-bubble-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -100%);
+  /* Style the info window. */
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  overflow-y: auto;
+  max-height: 60px;
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* image plugin */
+.image-gallery-left-nav, .image-gallery-right-nav {
+  padding: 0px 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image-gallery-left-nav .image-gallery-svg, .image-gallery-right-nav .image-gallery-svg {
+  height: 50px;
+  width: 30px;
+}
+
+.image-gallery {
+  width: 65%;
+  height: auto;
+}
+
+.image-gallery-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center center;
+}
+
+.fullscreen .image-gallery-slide img {
+  max-height: 100vh;
 }
